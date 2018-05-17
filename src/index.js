@@ -7,6 +7,6 @@ const HS_CORE = require('./modules/core')
 
 const HS_GAME = (...params) => new HS_CORE(...params)
 
-HS_GAME.core = HS_CORE
+HS_GAME.Core = HS_CORE
 
 module.exports = HS_GAME

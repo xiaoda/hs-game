@@ -5,16 +5,15 @@
 const helper = require('../helper')
 
 class HS_BASE {
-  constructor () {
-    /* 默认属性 */
-    this.props = {}
-  }
+  constructor () {}
 
   /* 更新属性 */
-  setProp (props) {
+  setProps (props, fn) {
     helper.forEachObj(props, (value, prop) => {
-      this.props[prop] = value
+      this[prop] = value
     })
+
+    helper.safelyRun(fn)
   }
 }
 

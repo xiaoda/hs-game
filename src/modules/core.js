@@ -12,13 +12,22 @@ class HS_CORE extends HS_BASE {
     /* 初始化玩家 */
     let players = options.players || []
 
-    /* 初始化一局游戏 */
-    let inning = new HS_INNING({players})
+    /* 当前的一局游戏 */
+    let inning
 
     this.setProps({
       players,
       inning
     })
+  }
+
+  /* 新的一局游戏 */
+  newInning () {
+    let {players} = this
+
+    let inning = new HS_INNING({players})
+
+    this.setProps({inning})
   }
 
   /* 进入下个回合 */

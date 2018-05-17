@@ -17,6 +17,7 @@ let players = [
 ]
 
 let game = HS_GAME({players})
+game.newInning()
 
 game.nextRound()
 debug(game)

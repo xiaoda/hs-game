@@ -48,9 +48,8 @@ class HS_ROUND extends HS_BASE {
         [activePlayer, inactivePlayer] = [inactivePlayer, activePlayer]
     }
 
-    activePlayer.changeOwnRound(true)
     activePlayer.initRoundCrystal()
-
+    activePlayer.changeOwnRound(true)
     inactivePlayer.changeOwnRound(false)
 
     this.setProps({

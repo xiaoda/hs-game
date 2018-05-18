@@ -12,7 +12,6 @@ class HS_BASE {
     helper.forEachObj(props, (value, prop) => {
       this[prop] = value
     })
-
     helper.safelyRun(fn)
   }
 }

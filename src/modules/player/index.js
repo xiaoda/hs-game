@@ -50,7 +50,9 @@ class HS_PLAYER extends HS_BASE {
 
   /* 初始化新回合的法力水晶 */
   initRoundCrystal () {
-    this.mana.initRoundCrystal()
+    let {mana} = this
+
+    mana.initRoundCrystal()
   }
 }
 

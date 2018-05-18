@@ -24,7 +24,9 @@ class HS_INNING extends HS_BASE {
 
   /* 进入下个回合 */
   nextRound () {
-    this.rounds.nextRound()
+    let {rounds} = this
+
+    rounds.nextRound()
   }
 }
 

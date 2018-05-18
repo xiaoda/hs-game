@@ -24,7 +24,6 @@ class HS_CORE extends HS_BASE {
   /* 新的一局游戏 */
   newInning () {
     let {players} = this
-
     let inning = new HS_INNING({players})
 
     this.setProps({inning})
@@ -32,7 +31,9 @@ class HS_CORE extends HS_BASE {
 
   /* 进入下个回合 */
   nextRound () {
-    this.inning.nextRound()
+    let {inning} = this
+
+    inning.nextRound()
   }
 }
 

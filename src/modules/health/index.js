@@ -2,22 +2,13 @@
  * 生命值类
  */
 
-const HS_BASE = require('../base')
-
-class HS_HEALTH extends HS_BASE {
+class HS_HEALTH {
   constructor (options = {}) {
-    super()
-
     /* 初始血量 */
-    let hp = 30
+    this.hp = 30
 
     /* 初始护甲 */
-    let armor = 0
-
-    this.setProps({
-      hp,
-      armor
-    })
+    this.armor = 0
   }
 }
 

@@ -3,7 +3,7 @@
  */
 
 const helper = require('./helper')
-const HS_CORE = require('./modules/core')
+const HS_CORE = require('./core')
 
 const HS_GAME = (...params) => new HS_CORE(...params)
 

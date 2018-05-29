@@ -2,41 +2,22 @@
  * 法力水晶类
  */
 
-const HS_BASE = require('../base')
-
 const MAX_CRYSTAL = 10
 
-class HS_MANA extends HS_BASE {
+class HS_MANA {
   constructor (options = {}) {
-    super()
-
     /* 初始法力水晶 */
-    let crystal = 0
+    this.crystal = 0
 
     /* 可用法力水晶 */
-    let usableCrystal = crystal
-
-    this.setProps({
-      crystal,
-      usableCrystal
-    })
+    this.usableCrystal = this.crystal
   }
 
   /* 初始化新回合的法力水晶 */
   initRoundCrystal () {
-    let {
-      crystal,
-      usableCrystal
-    } = this
+    if (this.crystal < MAX_CRYSTAL) this.crystal ++
 
-    if (crystal < MAX_CRYSTAL) crystal ++
-
-    usableCrystal = crystal
-
-    this.setProps({
-      crystal,
-      usableCrystal
-    })
+    this.usableCrystal = this.crystal
   }
 }
 

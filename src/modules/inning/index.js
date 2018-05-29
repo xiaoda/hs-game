@@ -2,31 +2,37 @@
  * 游戏局类
  */
 
-const HS_BASE = require('../base')
 const HS_PLAYER = require('../player')
-const HS_ROUND = require('../round')
 
-class HS_INNING extends HS_BASE {
+class HS_INNING {
   constructor (options = {}) {
-    super()
-
     /* 玩家 */
-    let players = options.players.map((player) => new HS_PLAYER(player))
+    this.players = options.players.map((player) => new HS_PLAYER(player))
 
-    /* 回合 */
-    let rounds = new HS_ROUND({players})
+    /* 当前回合 */
+    this.currentRound = 0
 
-    this.setProps({
-      players,
-      rounds
-    })
+    /* 当前回合玩家 */
+    this.activePlayer = null
+    this.inactivePlayer = null
   }
 
   /* 进入下个回合 */
   nextRound () {
-    let {rounds} = this
+    this.currentRound ++
 
-    rounds.nextRound()
+    switch (this.currentRound) {
+      case 1:
+        [this.activePlayer, this.inactivePlayer] = this.players
+        break
+
+      default:
+        [this.activePlayer, this.inactivePlayer] = [this.inactivePlayer, this.activePlayer]
+    }
+
+    this.activePlayer.initRoundCrystal()
+    this.activePlayer.changeOwnRound(true)
+    this.inactivePlayer.changeOwnRound(false)
   }
 }
 

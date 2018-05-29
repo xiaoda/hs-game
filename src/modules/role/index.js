@@ -1,35 +1,16 @@
 /**
- * 角色类
+ * 职业类
  */
 
-const HS_BASE = require('../base')
+const CONST = require('../../const')
 
-const ROLES_MAP = {
-  warrior: '战士',
-  mage:    '法师',
-  preist:  '牧师',
-  rouge:   '盗贼',
-  paladin: '圣骑士',
-  warlock: '术士',
-  druid:   '德鲁伊',
-  hunter:  '猎人',
-  shaman:  '萨满'
-}
-
-class HS_ROLE extends HS_BASE {
+class HS_ROLE {
   constructor (options = {}) {
-    super()
+    /* 职业ID */
+    this.role = options.role.toUpperCase()
 
-    /* 角色ID */
-    let roleId = options.role
-
-    /* 角色名称 */
-    let roleName = ROLES_MAP[roleId]
-
-    this.setProps({
-      roleId,
-      roleName
-    })
+    /* 职业名称 */
+    this.roleName = CONST.ROLES_MAP[this.role]
   }
 }
 

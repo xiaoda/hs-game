@@ -5,17 +5,16 @@ const debug = input => console.log(helper.cloneObj(input))
 
 let players = [
   {
-    id: 'playerId9527',
-    name: 'xiaoda',
+    id: 'playerId1',
+    name: '1P',
     role: 'mage'
   },
   {
-    id: 'playerId357',
-    name: '357',
+    id: 'playerId2',
+    name: '2p',
     role: 'warrior'
   }
 ]
-
 let game = HS_GAME({players})
 game.newInning()
 
